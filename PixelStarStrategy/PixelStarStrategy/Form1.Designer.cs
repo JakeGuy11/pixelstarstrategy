@@ -365,26 +365,36 @@
             // d_opMaxCrew
             // 
             this.d_opMaxCrew.Location = new System.Drawing.Point(178, 387);
-            this.d_opMaxCrew.Maximum = new decimal(new int[] {
-            50,
+            this.d_opMaxCrew.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
             this.d_opMaxCrew.Name = "d_opMaxCrew";
             this.d_opMaxCrew.Size = new System.Drawing.Size(43, 20);
             this.d_opMaxCrew.TabIndex = 13;
+            this.d_opMaxCrew.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // d_opMaxRooms
             // 
             this.d_opMaxRooms.Location = new System.Drawing.Point(178, 286);
-            this.d_opMaxRooms.Maximum = new decimal(new int[] {
-            50,
+            this.d_opMaxRooms.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
             this.d_opMaxRooms.Name = "d_opMaxRooms";
             this.d_opMaxRooms.Size = new System.Drawing.Size(43, 20);
             this.d_opMaxRooms.TabIndex = 9;
+            this.d_opMaxRooms.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // d_opMaxCrewLabel
             // 
@@ -407,26 +417,36 @@
             // d_maxCrew
             // 
             this.d_maxCrew.Location = new System.Drawing.Point(11, 387);
-            this.d_maxCrew.Maximum = new decimal(new int[] {
-            50,
+            this.d_maxCrew.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
             this.d_maxCrew.Name = "d_maxCrew";
             this.d_maxCrew.Size = new System.Drawing.Size(43, 20);
             this.d_maxCrew.TabIndex = 12;
+            this.d_maxCrew.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // d_maxRooms
             // 
             this.d_maxRooms.Location = new System.Drawing.Point(11, 286);
-            this.d_maxRooms.Maximum = new decimal(new int[] {
-            50,
+            this.d_maxRooms.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
             this.d_maxRooms.Name = "d_maxRooms";
             this.d_maxRooms.Size = new System.Drawing.Size(43, 20);
             this.d_maxRooms.TabIndex = 8;
+            this.d_maxRooms.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // d_maxCrewLabel
             // 
@@ -617,11 +637,6 @@
             // d_layoutNum
             // 
             this.d_layoutNum.Location = new System.Drawing.Point(11, 71);
-            this.d_layoutNum.Maximum = new decimal(new int[] {
-            9,
-            0,
-            0,
-            0});
             this.d_layoutNum.Minimum = new decimal(new int[] {
             1,
             0,
