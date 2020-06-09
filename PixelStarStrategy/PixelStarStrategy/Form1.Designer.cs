@@ -139,6 +139,7 @@
             // 
             // d_tabAnalyze
             // 
+            this.d_tabAnalyze.BackColor = System.Drawing.Color.Black;
             this.d_tabAnalyze.Controls.Add(this.d_bestLayoutLabel);
             this.d_tabAnalyze.Controls.Add(this.d_labelLabel);
             this.d_tabAnalyze.Controls.Add(this.d_analyzeButton);
@@ -148,7 +149,6 @@
             this.d_tabAnalyze.Size = new System.Drawing.Size(576, 470);
             this.d_tabAnalyze.TabIndex = 0;
             this.d_tabAnalyze.Text = "Analyze";
-            this.d_tabAnalyze.UseVisualStyleBackColor = true;
             // 
             // d_bestLayoutLabel
             // 
@@ -175,17 +175,20 @@
             // 
             // d_analyzeButton
             // 
+            this.d_analyzeButton.BackColor = System.Drawing.Color.Black;
+            this.d_analyzeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.d_analyzeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.d_analyzeButton.Location = new System.Drawing.Point(184, 285);
             this.d_analyzeButton.Name = "d_analyzeButton";
             this.d_analyzeButton.Size = new System.Drawing.Size(200, 150);
             this.d_analyzeButton.TabIndex = 1;
             this.d_analyzeButton.Text = "Update And Analyze";
-            this.d_analyzeButton.UseVisualStyleBackColor = true;
+            this.d_analyzeButton.UseVisualStyleBackColor = false;
             this.d_analyzeButton.Click += new System.EventHandler(this.UpdateAnalyze);
             // 
             // d_tabPriorities
             // 
+            this.d_tabPriorities.BackColor = System.Drawing.Color.Black;
             this.d_tabPriorities.Controls.Add(this.d_fetchPri);
             this.d_tabPriorities.Controls.Add(this.d_submitPri);
             this.d_tabPriorities.Controls.Add(this.d_priCrewSlider);
@@ -204,10 +207,10 @@
             this.d_tabPriorities.Size = new System.Drawing.Size(576, 470);
             this.d_tabPriorities.TabIndex = 1;
             this.d_tabPriorities.Text = "Set Priorities";
-            this.d_tabPriorities.UseVisualStyleBackColor = true;
             // 
             // d_fetchPri
             // 
+            this.d_fetchPri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.d_fetchPri.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.d_fetchPri.Location = new System.Drawing.Point(218, 278);
             this.d_fetchPri.Name = "d_fetchPri";
@@ -219,6 +222,7 @@
             // 
             // d_submitPri
             // 
+            this.d_submitPri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.d_submitPri.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.d_submitPri.Location = new System.Drawing.Point(12, 278);
             this.d_submitPri.Name = "d_submitPri";
@@ -230,7 +234,7 @@
             // 
             // d_priCrewSlider
             // 
-            this.d_priCrewSlider.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.d_priCrewSlider.BackColor = System.Drawing.SystemColors.ControlText;
             this.d_priCrewSlider.Location = new System.Drawing.Point(8, 227);
             this.d_priCrewSlider.Name = "d_priCrewSlider";
             this.d_priCrewSlider.Size = new System.Drawing.Size(556, 45);
@@ -247,7 +251,7 @@
             // 
             // d_priRoomSlider
             // 
-            this.d_priRoomSlider.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.d_priRoomSlider.BackColor = System.Drawing.SystemColors.ControlText;
             this.d_priRoomSlider.Location = new System.Drawing.Point(8, 176);
             this.d_priRoomSlider.Name = "d_priRoomSlider";
             this.d_priRoomSlider.Size = new System.Drawing.Size(556, 45);
@@ -264,7 +268,7 @@
             // 
             // d_priTimeSlider
             // 
-            this.d_priTimeSlider.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.d_priTimeSlider.BackColor = System.Drawing.SystemColors.ControlText;
             this.d_priTimeSlider.Location = new System.Drawing.Point(8, 125);
             this.d_priTimeSlider.Name = "d_priTimeSlider";
             this.d_priTimeSlider.Size = new System.Drawing.Size(556, 45);
@@ -281,7 +285,7 @@
             // 
             // d_priHPSlider
             // 
-            this.d_priHPSlider.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.d_priHPSlider.BackColor = System.Drawing.SystemColors.ControlText;
             this.d_priHPSlider.Location = new System.Drawing.Point(8, 74);
             this.d_priHPSlider.Name = "d_priHPSlider";
             this.d_priHPSlider.Size = new System.Drawing.Size(556, 45);
@@ -321,6 +325,7 @@
             // 
             // d_inputDataTab
             // 
+            this.d_inputDataTab.BackColor = System.Drawing.Color.Black;
             this.d_inputDataTab.Controls.Add(this.d_opMaxCrew);
             this.d_inputDataTab.Controls.Add(this.d_opMaxRooms);
             this.d_inputDataTab.Controls.Add(this.d_opMaxCrewLabel);
@@ -355,12 +360,12 @@
             this.d_inputDataTab.Controls.Add(this.d_layoutNumLabel);
             this.d_inputDataTab.Controls.Add(this.d_matchTitle);
             this.d_inputDataTab.Controls.Add(this.d_matchSubtitle);
+            this.d_inputDataTab.Cursor = System.Windows.Forms.Cursors.Default;
             this.d_inputDataTab.Location = new System.Drawing.Point(4, 22);
             this.d_inputDataTab.Name = "d_inputDataTab";
             this.d_inputDataTab.Size = new System.Drawing.Size(576, 470);
             this.d_inputDataTab.TabIndex = 2;
             this.d_inputDataTab.Text = "Input Data";
-            this.d_inputDataTab.UseVisualStyleBackColor = true;
             // 
             // d_opMaxCrew
             // 
@@ -504,6 +509,7 @@
             // 
             // d_clearMatchData
             // 
+            this.d_clearMatchData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.d_clearMatchData.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.d_clearMatchData.Location = new System.Drawing.Point(354, 166);
             this.d_clearMatchData.Name = "d_clearMatchData";
@@ -515,6 +521,7 @@
             // 
             // d_saveMatch
             // 
+            this.d_saveMatch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.d_saveMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.d_saveMatch.Location = new System.Drawing.Point(354, 58);
             this.d_saveMatch.Name = "d_saveMatch";
@@ -732,10 +739,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(584, 561);
             this.Controls.Add(this.d_tabControl);
             this.Controls.Add(this.d_subTitleLabel);
             this.Controls.Add(this.d_titleLabel);
+            this.ForeColor = System.Drawing.Color.Gold;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
