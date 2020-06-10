@@ -131,11 +131,14 @@
             this.d_tabControl.Controls.Add(this.d_tabPriorities);
             this.d_tabControl.Controls.Add(this.d_inputDataTab);
             this.d_tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.d_tabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.d_tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.d_tabControl.Location = new System.Drawing.Point(0, 65);
             this.d_tabControl.Name = "d_tabControl";
             this.d_tabControl.SelectedIndex = 0;
             this.d_tabControl.Size = new System.Drawing.Size(584, 496);
             this.d_tabControl.TabIndex = 2;
+            this.d_tabControl.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.d_tabControl_DrawItem);
             // 
             // d_tabAnalyze
             // 
@@ -143,10 +146,10 @@
             this.d_tabAnalyze.Controls.Add(this.d_bestLayoutLabel);
             this.d_tabAnalyze.Controls.Add(this.d_labelLabel);
             this.d_tabAnalyze.Controls.Add(this.d_analyzeButton);
-            this.d_tabAnalyze.Location = new System.Drawing.Point(4, 22);
+            this.d_tabAnalyze.Location = new System.Drawing.Point(4, 25);
             this.d_tabAnalyze.Name = "d_tabAnalyze";
             this.d_tabAnalyze.Padding = new System.Windows.Forms.Padding(3);
-            this.d_tabAnalyze.Size = new System.Drawing.Size(576, 470);
+            this.d_tabAnalyze.Size = new System.Drawing.Size(576, 467);
             this.d_tabAnalyze.TabIndex = 0;
             this.d_tabAnalyze.Text = "Analyze";
             // 
@@ -217,7 +220,7 @@
             this.d_fetchPri.Size = new System.Drawing.Size(200, 100);
             this.d_fetchPri.TabIndex = 6;
             this.d_fetchPri.Text = "Restore Values From Last Save";
-            this.d_fetchPri.UseVisualStyleBackColor = true;
+            this.d_fetchPri.UseVisualStyleBackColor = false;
             this.d_fetchPri.Click += new System.EventHandler(this.GetPriPrefs);
             // 
             // d_submitPri
@@ -229,7 +232,7 @@
             this.d_submitPri.Size = new System.Drawing.Size(200, 100);
             this.d_submitPri.TabIndex = 5;
             this.d_submitPri.Text = "Submit Priorities";
-            this.d_submitPri.UseVisualStyleBackColor = true;
+            this.d_submitPri.UseVisualStyleBackColor = false;
             this.d_submitPri.Click += new System.EventHandler(this.WritePriPrefs);
             // 
             // d_priCrewSlider
@@ -245,7 +248,7 @@
             this.d_priCrew.AutoSize = true;
             this.d_priCrew.Location = new System.Drawing.Point(5, 211);
             this.d_priCrew.Name = "d_priCrew";
-            this.d_priCrew.Size = new System.Drawing.Size(87, 13);
+            this.d_priCrew.Size = new System.Drawing.Size(109, 16);
             this.d_priCrew.TabIndex = 12;
             this.d_priCrew.Text = "Crew Remaining:";
             // 
@@ -262,7 +265,7 @@
             this.d_priRoomLabel.AutoSize = true;
             this.d_priRoomLabel.Location = new System.Drawing.Point(5, 160);
             this.d_priRoomLabel.Name = "d_priRoomLabel";
-            this.d_priRoomLabel.Size = new System.Drawing.Size(94, 13);
+            this.d_priRoomLabel.Size = new System.Drawing.Size(121, 16);
             this.d_priRoomLabel.TabIndex = 10;
             this.d_priRoomLabel.Text = "Rooms Destroyed:";
             // 
@@ -279,7 +282,7 @@
             this.d_priTimeLabel.AutoSize = true;
             this.d_priTimeLabel.Location = new System.Drawing.Point(5, 109);
             this.d_priTimeLabel.Name = "d_priTimeLabel";
-            this.d_priTimeLabel.Size = new System.Drawing.Size(86, 13);
+            this.d_priTimeLabel.Size = new System.Drawing.Size(110, 16);
             this.d_priTimeLabel.TabIndex = 8;
             this.d_priTimeLabel.Text = "Time Remaining:";
             // 
@@ -308,7 +311,7 @@
             this.d_priHPLabel.AutoSize = true;
             this.d_priHPLabel.Location = new System.Drawing.Point(9, 58);
             this.d_priHPLabel.Name = "d_priHPLabel";
-            this.d_priHPLabel.Size = new System.Drawing.Size(78, 13);
+            this.d_priHPLabel.Size = new System.Drawing.Size(98, 16);
             this.d_priHPLabel.TabIndex = 1;
             this.d_priHPLabel.Text = "HP Remaining:";
             // 
@@ -376,7 +379,7 @@
             0,
             0});
             this.d_opMaxCrew.Name = "d_opMaxCrew";
-            this.d_opMaxCrew.Size = new System.Drawing.Size(43, 20);
+            this.d_opMaxCrew.Size = new System.Drawing.Size(43, 22);
             this.d_opMaxCrew.TabIndex = 13;
             this.d_opMaxCrew.Value = new decimal(new int[] {
             1,
@@ -393,7 +396,7 @@
             0,
             0});
             this.d_opMaxRooms.Name = "d_opMaxRooms";
-            this.d_opMaxRooms.Size = new System.Drawing.Size(43, 20);
+            this.d_opMaxRooms.Size = new System.Drawing.Size(43, 22);
             this.d_opMaxRooms.TabIndex = 9;
             this.d_opMaxRooms.Value = new decimal(new int[] {
             1,
@@ -406,7 +409,7 @@
             this.d_opMaxCrewLabel.AutoSize = true;
             this.d_opMaxCrewLabel.Location = new System.Drawing.Point(175, 371);
             this.d_opMaxCrewLabel.Name = "d_opMaxCrewLabel";
-            this.d_opMaxCrewLabel.Size = new System.Drawing.Size(111, 13);
+            this.d_opMaxCrewLabel.Size = new System.Drawing.Size(137, 16);
             this.d_opMaxCrewLabel.TabIndex = 35;
             this.d_opMaxCrewLabel.Text = "Opponent Total Crew:";
             // 
@@ -415,7 +418,7 @@
             this.d_opMaxRoomsLabel.AutoSize = true;
             this.d_opMaxRoomsLabel.Location = new System.Drawing.Point(175, 270);
             this.d_opMaxRoomsLabel.Name = "d_opMaxRoomsLabel";
-            this.d_opMaxRoomsLabel.Size = new System.Drawing.Size(147, 13);
+            this.d_opMaxRoomsLabel.Size = new System.Drawing.Size(184, 16);
             this.d_opMaxRoomsLabel.TabIndex = 34;
             this.d_opMaxRoomsLabel.Text = "Opponent Number Of Rooms:";
             // 
@@ -428,7 +431,7 @@
             0,
             0});
             this.d_maxCrew.Name = "d_maxCrew";
-            this.d_maxCrew.Size = new System.Drawing.Size(43, 20);
+            this.d_maxCrew.Size = new System.Drawing.Size(43, 22);
             this.d_maxCrew.TabIndex = 12;
             this.d_maxCrew.Value = new decimal(new int[] {
             1,
@@ -445,7 +448,7 @@
             0,
             0});
             this.d_maxRooms.Name = "d_maxRooms";
-            this.d_maxRooms.Size = new System.Drawing.Size(43, 20);
+            this.d_maxRooms.Size = new System.Drawing.Size(43, 22);
             this.d_maxRooms.TabIndex = 8;
             this.d_maxRooms.Value = new decimal(new int[] {
             1,
@@ -458,7 +461,7 @@
             this.d_maxCrewLabel.AutoSize = true;
             this.d_maxCrewLabel.Location = new System.Drawing.Point(8, 371);
             this.d_maxCrewLabel.Name = "d_maxCrewLabel";
-            this.d_maxCrewLabel.Size = new System.Drawing.Size(86, 13);
+            this.d_maxCrewLabel.Size = new System.Drawing.Size(106, 16);
             this.d_maxCrewLabel.TabIndex = 33;
             this.d_maxCrewLabel.Text = "Your Total Crew:";
             // 
@@ -467,7 +470,7 @@
             this.d_maxRoomsLabel.AutoSize = true;
             this.d_maxRoomsLabel.Location = new System.Drawing.Point(8, 270);
             this.d_maxRoomsLabel.Name = "d_maxRoomsLabel";
-            this.d_maxRoomsLabel.Size = new System.Drawing.Size(122, 13);
+            this.d_maxRoomsLabel.Size = new System.Drawing.Size(153, 16);
             this.d_maxRoomsLabel.TabIndex = 32;
             this.d_maxRoomsLabel.Text = "Your Number Of Rooms:";
             // 
@@ -476,7 +479,7 @@
             this.d_opMaxHP.Location = new System.Drawing.Point(178, 124);
             this.d_opMaxHP.MaxLength = 2;
             this.d_opMaxHP.Name = "d_opMaxHP";
-            this.d_opMaxHP.Size = new System.Drawing.Size(43, 20);
+            this.d_opMaxHP.Size = new System.Drawing.Size(43, 22);
             this.d_opMaxHP.TabIndex = 3;
             this.d_opMaxHP.Text = "00";
             // 
@@ -485,7 +488,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(175, 108);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
+            this.label1.Size = new System.Drawing.Size(117, 16);
             this.label1.TabIndex = 27;
             this.label1.Text = "Opponent Max HP";
             // 
@@ -494,7 +497,7 @@
             this.d_myMaxHP.Location = new System.Drawing.Point(11, 124);
             this.d_myMaxHP.MaxLength = 2;
             this.d_myMaxHP.Name = "d_myMaxHP";
-            this.d_myMaxHP.Size = new System.Drawing.Size(43, 20);
+            this.d_myMaxHP.Size = new System.Drawing.Size(43, 22);
             this.d_myMaxHP.TabIndex = 2;
             this.d_myMaxHP.Text = "00";
             // 
@@ -503,7 +506,7 @@
             this.d_maxHPLabel.AutoSize = true;
             this.d_maxHPLabel.Location = new System.Drawing.Point(8, 108);
             this.d_maxHPLabel.Name = "d_maxHPLabel";
-            this.d_maxHPLabel.Size = new System.Drawing.Size(73, 13);
+            this.d_maxHPLabel.Size = new System.Drawing.Size(89, 16);
             this.d_maxHPLabel.TabIndex = 26;
             this.d_maxHPLabel.Text = "Your Max HP:";
             // 
@@ -516,7 +519,7 @@
             this.d_clearMatchData.Size = new System.Drawing.Size(214, 100);
             this.d_clearMatchData.TabIndex = 17;
             this.d_clearMatchData.Text = "Clear All Match Data";
-            this.d_clearMatchData.UseVisualStyleBackColor = true;
+            this.d_clearMatchData.UseVisualStyleBackColor = false;
             this.d_clearMatchData.Click += new System.EventHandler(this.ClearMatchData);
             // 
             // d_saveMatch
@@ -528,7 +531,7 @@
             this.d_saveMatch.Size = new System.Drawing.Size(214, 100);
             this.d_saveMatch.TabIndex = 16;
             this.d_saveMatch.Text = "Save Match Data";
-            this.d_saveMatch.UseVisualStyleBackColor = true;
+            this.d_saveMatch.UseVisualStyleBackColor = false;
             this.d_saveMatch.Click += new System.EventHandler(this.WriteUserDataToJSON);
             // 
             // d_opCrewBox
@@ -540,7 +543,7 @@
             0,
             0});
             this.d_opCrewBox.Name = "d_opCrewBox";
-            this.d_opCrewBox.Size = new System.Drawing.Size(43, 20);
+            this.d_opCrewBox.Size = new System.Drawing.Size(43, 22);
             this.d_opCrewBox.TabIndex = 15;
             // 
             // d_opRoomsBox
@@ -552,7 +555,7 @@
             0,
             0});
             this.d_opRoomsBox.Name = "d_opRoomsBox";
-            this.d_opRoomsBox.Size = new System.Drawing.Size(43, 20);
+            this.d_opRoomsBox.Size = new System.Drawing.Size(43, 22);
             this.d_opRoomsBox.TabIndex = 11;
             // 
             // d_opCrewLabel
@@ -560,7 +563,7 @@
             this.d_opCrewLabel.AutoSize = true;
             this.d_opCrewLabel.Location = new System.Drawing.Point(175, 419);
             this.d_opCrewLabel.Name = "d_opCrewLabel";
-            this.d_opCrewLabel.Size = new System.Drawing.Size(137, 13);
+            this.d_opCrewLabel.Size = new System.Drawing.Size(171, 16);
             this.d_opCrewLabel.TabIndex = 23;
             this.d_opCrewLabel.Text = "Opponent Crew Remaining:";
             // 
@@ -569,7 +572,7 @@
             this.d_opRoomsLabel.AutoSize = true;
             this.d_opRoomsLabel.Location = new System.Drawing.Point(175, 319);
             this.d_opRoomsLabel.Name = "d_opRoomsLabel";
-            this.d_opRoomsLabel.Size = new System.Drawing.Size(144, 13);
+            this.d_opRoomsLabel.Size = new System.Drawing.Size(183, 16);
             this.d_opRoomsLabel.TabIndex = 22;
             this.d_opRoomsLabel.Text = "Opponent Rooms Destroyed:";
             // 
@@ -578,7 +581,7 @@
             this.d_opHP.Location = new System.Drawing.Point(178, 177);
             this.d_opHP.MaxLength = 4;
             this.d_opHP.Name = "d_opHP";
-            this.d_opHP.Size = new System.Drawing.Size(43, 20);
+            this.d_opHP.Size = new System.Drawing.Size(43, 22);
             this.d_opHP.TabIndex = 5;
             this.d_opHP.Text = "00.0";
             // 
@@ -587,7 +590,7 @@
             this.d_enemyHPLabel.AutoSize = true;
             this.d_enemyHPLabel.Location = new System.Drawing.Point(175, 161);
             this.d_enemyHPLabel.Name = "d_enemyHPLabel";
-            this.d_enemyHPLabel.Size = new System.Drawing.Size(128, 13);
+            this.d_enemyHPLabel.Size = new System.Drawing.Size(160, 16);
             this.d_enemyHPLabel.TabIndex = 20;
             this.d_enemyHPLabel.Text = "Opponent HP Remaining:";
             // 
@@ -600,7 +603,7 @@
             0,
             0});
             this.d_myCrewKilled.Name = "d_myCrewKilled";
-            this.d_myCrewKilled.Size = new System.Drawing.Size(43, 20);
+            this.d_myCrewKilled.Size = new System.Drawing.Size(43, 22);
             this.d_myCrewKilled.TabIndex = 14;
             // 
             // d_myRoomsDestroyed
@@ -612,7 +615,7 @@
             0,
             0});
             this.d_myRoomsDestroyed.Name = "d_myRoomsDestroyed";
-            this.d_myRoomsDestroyed.Size = new System.Drawing.Size(43, 20);
+            this.d_myRoomsDestroyed.Size = new System.Drawing.Size(43, 22);
             this.d_myRoomsDestroyed.TabIndex = 10;
             // 
             // d_timeMins
@@ -620,7 +623,7 @@
             this.d_timeMins.Location = new System.Drawing.Point(11, 232);
             this.d_timeMins.MaxLength = 1;
             this.d_timeMins.Name = "d_timeMins";
-            this.d_timeMins.Size = new System.Drawing.Size(16, 20);
+            this.d_timeMins.Size = new System.Drawing.Size(16, 22);
             this.d_timeMins.TabIndex = 6;
             this.d_timeMins.Text = "3";
             // 
@@ -628,7 +631,7 @@
             // 
             this.d_timeSecs.Location = new System.Drawing.Point(45, 232);
             this.d_timeSecs.Name = "d_timeSecs";
-            this.d_timeSecs.Size = new System.Drawing.Size(30, 20);
+            this.d_timeSecs.Size = new System.Drawing.Size(30, 22);
             this.d_timeSecs.TabIndex = 7;
             this.d_timeSecs.Text = "00";
             // 
@@ -637,7 +640,7 @@
             this.d_myHPBox.Location = new System.Drawing.Point(11, 177);
             this.d_myHPBox.MaxLength = 4;
             this.d_myHPBox.Name = "d_myHPBox";
-            this.d_myHPBox.Size = new System.Drawing.Size(43, 20);
+            this.d_myHPBox.Size = new System.Drawing.Size(43, 22);
             this.d_myHPBox.TabIndex = 4;
             this.d_myHPBox.Text = "00.0";
             // 
@@ -650,7 +653,7 @@
             0,
             0});
             this.d_layoutNum.Name = "d_layoutNum";
-            this.d_layoutNum.Size = new System.Drawing.Size(43, 20);
+            this.d_layoutNum.Size = new System.Drawing.Size(43, 22);
             this.d_layoutNum.TabIndex = 1;
             this.d_layoutNum.Value = new decimal(new int[] {
             1,
@@ -663,7 +666,7 @@
             this.d_colonLabel.AutoSize = true;
             this.d_colonLabel.Location = new System.Drawing.Point(29, 235);
             this.d_colonLabel.Name = "d_colonLabel";
-            this.d_colonLabel.Size = new System.Drawing.Size(10, 13);
+            this.d_colonLabel.Size = new System.Drawing.Size(11, 16);
             this.d_colonLabel.TabIndex = 14;
             this.d_colonLabel.Text = ":";
             // 
@@ -672,7 +675,7 @@
             this.d_crewLabel.AutoSize = true;
             this.d_crewLabel.Location = new System.Drawing.Point(8, 419);
             this.d_crewLabel.Name = "d_crewLabel";
-            this.d_crewLabel.Size = new System.Drawing.Size(112, 13);
+            this.d_crewLabel.Size = new System.Drawing.Size(140, 16);
             this.d_crewLabel.TabIndex = 13;
             this.d_crewLabel.Text = "Your Crew Remaining:";
             // 
@@ -681,7 +684,7 @@
             this.d_roomsLabel.AutoSize = true;
             this.d_roomsLabel.Location = new System.Drawing.Point(8, 319);
             this.d_roomsLabel.Name = "d_roomsLabel";
-            this.d_roomsLabel.Size = new System.Drawing.Size(119, 13);
+            this.d_roomsLabel.Size = new System.Drawing.Size(152, 16);
             this.d_roomsLabel.TabIndex = 12;
             this.d_roomsLabel.Text = "Your Rooms Destroyed:";
             // 
@@ -690,7 +693,7 @@
             this.d_TimeLabel.AutoSize = true;
             this.d_TimeLabel.Location = new System.Drawing.Point(8, 216);
             this.d_TimeLabel.Name = "d_TimeLabel";
-            this.d_TimeLabel.Size = new System.Drawing.Size(86, 13);
+            this.d_TimeLabel.Size = new System.Drawing.Size(110, 16);
             this.d_TimeLabel.TabIndex = 11;
             this.d_TimeLabel.Text = "Time Remaining:";
             // 
@@ -699,7 +702,7 @@
             this.d_myHPLabel.AutoSize = true;
             this.d_myHPLabel.Location = new System.Drawing.Point(8, 161);
             this.d_myHPLabel.Name = "d_myHPLabel";
-            this.d_myHPLabel.Size = new System.Drawing.Size(103, 13);
+            this.d_myHPLabel.Size = new System.Drawing.Size(129, 16);
             this.d_myHPLabel.TabIndex = 10;
             this.d_myHPLabel.Text = "Your HP Remaining:";
             // 
@@ -708,7 +711,7 @@
             this.d_layoutNumLabel.AutoSize = true;
             this.d_layoutNumLabel.Location = new System.Drawing.Point(8, 55);
             this.d_layoutNumLabel.Name = "d_layoutNumLabel";
-            this.d_layoutNumLabel.Size = new System.Drawing.Size(82, 13);
+            this.d_layoutNumLabel.Size = new System.Drawing.Size(102, 16);
             this.d_layoutNumLabel.TabIndex = 9;
             this.d_layoutNumLabel.Text = "Layout Number:";
             // 
@@ -739,7 +742,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(584, 561);
             this.Controls.Add(this.d_tabControl);
             this.Controls.Add(this.d_subTitleLabel);

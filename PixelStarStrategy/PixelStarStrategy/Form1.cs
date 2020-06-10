@@ -56,9 +56,6 @@ namespace PixelStarStrategy
         #endregion
 
         //Runs at start
-        #region Init
-
-        //Runs at start
         public d_form()
         {
             //Initializes all GUI components
@@ -66,6 +63,7 @@ namespace PixelStarStrategy
             //Inits a new Log file
             try
             {
+                //If the directory exists, create our log file
                 File.Create(LogPath).Close();
                 Log("=============");
                 Log("Beginning Log");
@@ -73,24 +71,21 @@ namespace PixelStarStrategy
             }
             catch
             {
+                //Our directory does not exist. Create it and begin logging
                 Directory.CreateDirectory(Path);
                 File.Create(LogPath).Close();
                 Log("=============");
                 Log("Beginning Log");
                 Log("=============");
+                //JAKE! Add the welcome message here!
             }
+            //If our match data file doesn't exist, create it. We don't do this with priority because we're creating a new one anyways, never adding to it.
             if (!File.Exists(InfoPath))
             {
                 File.Create(InfoPath).Close();
             }
-            //Try reading from the Priority preference file
         }
 
-        #endregion
-
-        //The big stuff, calculations, etc.
-        #region Main Functions
-        
         //doing all calculations and displaying the best option
         private void UpdateAnalyze(object sender, EventArgs e)
         {
@@ -119,6 +114,7 @@ namespace PixelStarStrategy
                 myPri.pri_crew = d_priCrewSlider.Value;
             }
             Log("Updated priorities from object(HP,Time,Rooms,Crew): " + myPri.pri_hp + ", " + myPri.pri_time + ", " + myPri.pri_rooms + ", " + myPri.pri_crew);
+            //Save the values from our object to variables
             PriorityHP = myPri.pri_hp;
             PriorityTime = myPri.pri_time;
             PriorityRoom = myPri.pri_rooms;
@@ -228,8 +224,6 @@ namespace PixelStarStrategy
                 Log("========================================");
             }
         }
-
-        #endregion
 
         //Everything that interacts directly with the JSON or fits closest with it
         #region JSON
@@ -477,6 +471,55 @@ namespace PixelStarStrategy
                 }
             }
         }
+
+        //Draw our custom tabControl
+        private void d_tabControl_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            //Create some brushes
+            Brush blackBrush;
+            Brush txtBrush;
+            //Create a string format for our text
+            StringFormat string_format;
+
+            //Init and set the brushes
+            blackBrush = Brushes.Black;
+            txtBrush = Brushes.Gold;
+            //Init the string Format
+            string_format = new StringFormat();
+
+            //Degine and draw a rectangle for each of our tabs
+            Rectangle tab_rect = d_tabControl.GetTabRect(e.Index);
+
+            e.Graphics.FillRectangle(blackBrush, tab_rect);
+
+            //Define and draw a rectangle for the top part of the tabControl that will otherwise be white
+            Rectangle topRect = new Rectangle();
+            topRect.Width = 359;
+            topRect.Height = 23;
+            topRect.X = 225;
+            
+            e.Graphics.FillRectangle(blackBrush, topRect);
+
+            //Define and draw a rectangle to hide the ugly white borders
+            Rectangle botRect = new Rectangle();
+            botRect.Width = 585;
+            botRect.Height = 471;
+            botRect.Y = 25;
+
+            e.Graphics.FillRectangle(blackBrush, botRect);
+
+            //Define a new rectangle where we will put our new text
+            RectangleF layout_rect = new RectangleF(tab_rect.Left + 3, tab_rect.Y + 3, tab_rect.Width - 2 * 3, tab_rect.Height - 2 * 3);
+
+            //Set allignment of the text
+            string_format.Alignment = StringAlignment.Center;
+            string_format.LineAlignment = StringAlignment.Center;
+            //Draw the text
+            e.Graphics.DrawString(d_tabControl.TabPages[e.Index].Text, e.Font, txtBrush, layout_rect, string_format);
+
+
+        }
+
     }
 
     //Have a class that we can use to create our Info JSON
