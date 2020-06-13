@@ -77,7 +77,10 @@ namespace PixelStarStrategy
                 Log("=============");
                 Log("Beginning Log");
                 Log("=============");
-                //JAKE! Add the welcome message here!
+                DialogResult result = MessageBox.Show("Welcome to Pixel StarStrategy! Beta v. 0.2.3",
+                    "Welcome!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
             //If our match data file doesn't exist, create it. We don't do this with priority because we're creating a new one anyways, never adding to it.
             if (!File.Exists(InfoPath))
